@@ -1,0 +1,16 @@
+import matplotlib.pyplot as plt
+import numpy as np
+#x=np.linspace(0,16)
+x=np.linspace(0,5*np.pi,10000)
+y1=np.sin(x)
+y2=np.sin(2*x)
+#plt.plot(x,y1)
+#plt.plot(x,y2)
+#plt.fill(x,y1,'r',alpha=0.3)
+#plt.fill(x,y2,'b',alpha=0.3)
+fig=plt.figure()
+ax=plt.gca()
+ax.plot(x,y1,c='b')
+ax.plot(x,y2,c='r')
+ax.fill_between(x,y1,y2,where=y1>=y2,facecolors='y')
+ax.fill_between(x,y1,y2,where=y1<y2,facecolors='b')
